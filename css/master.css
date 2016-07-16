@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: url(../assets/background.jpg);
+  background-size: cover;
+}
+
+.player {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -240px;
+  margin-left: -150px;
+  width: 300px;
+  height: 480px;
+  background-color: #86C166;
+}
+
+.cover {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  top:0;
+  left:0;
+  background-color: #554236;
+}
+
+.cover .img {
+  background-image: url(../assets/cover.jpg);
+  background-size: cover;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  -moz-box-shadow: 0px 0px 6px #000000;
+  -webkit-box-shadow: 0px 0px 6px #000000;
+  box-shadow: 0px 0px 6px #000000;
+}
+
+.info {
+  position: absolute;
+  width: 100%;
+  height:60px;
+  top: 300px;
+  left: 0px;
+}
+
+.info .inner {
+  padding: 5px 10px;
+  border-top: 1px solid;
+}
+
+.info p {
+  text-align: center;
+  height:50%;
+  overflow: hidden;
+  line-height: 21px;
+}
+
+.progressBar {
+  position: absolute;
+  width: 100%;
+  height: 30px;
+  top:360px;
+  left:0;
+  padding: auto;
+  text-align: center;
+}
+
+.progressBar .inner{
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  display: flex;
+  overflow: hidden;
+  height:100%;
+}
+
+progress {
+  width: 210px;
+  height: 4px;
+  margin: auto;
+  border: 1px solid #0064B4;
+  background-color:#e6e6e6;
+  color: #0064B4;
+}
+
+#time{
+  font-size: 10px;
+  float: left;
+  margin: auto;
+}
+#duration {
+  font-size: 10px;
+  float: right;
+  margin: auto;
+}
+  .controlBar {
+  width: 100%;
+  height:50px;
+  top:390px;
+  left:0;
+  position: absolute;
+  overflow: hidden;
+}
+.cb_play .inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content:space-around;
+}
+
+
+.cb_volume .inner{
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+#btnVolume,
+#btnPrevious,
+#btnPlay,
+#btnNext {
+  margin: auto;
+}
+
+meter {
+  height:4px;
+  margin:auto;
+}
+
+.lyrics {
+  position: absolute;
+  width: 100%;
+  height: 40px;
+  top:440px;
+  left: 0;
+}
+
+.lyrics .inner {
+  border-top:1px solid;
+}
+.cb_play {
+  width:180px;
+  height:50px;
+  float: left;
+}
+
+.cb_volume {
+  width: 120px;
+  height: 50px;
+  float: right;
+}

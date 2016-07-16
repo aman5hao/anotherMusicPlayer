@@ -3,45 +3,62 @@
   <head>
     <meta charset="utf-8">
     <title>my music player</title>
-    <link rel="stylesheet" href="master.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/master.css">
+    <script
+			  src="https://code.jquery.com/jquery-3.1.0.min.js"
+			  integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="
+			  crossorigin="anonymous"></script>
     <script type="master.js"></script>
   </head>
   <body>
-    <div class="wrapper">
       <div class="player">
         <div class="cover">
-          <img src="" alt="" />
-        </div>
-        <div class="lyrics">
-
+          <div class="img"></div>
         </div>
         <div class="info">
-          <p id="name"></p>
-          <p id="artist"></p>
-        </div>
-        <div class="controls">
-          <div class="progressBar">
-            <progress id="playPercent" max="100"></progress>
-            <span id="time"></span>
+          <div class="inner">
+            <p id="name">wish u were here</p>
+            <p id="artist">pink floyd</p>
           </div>
+        </div>
+        <div class="progressBar">
+          <div class="inner">
+            <span id="time">1:00</span>
+            <progress id="playPercent" max="100" value="80"></progress>
+            <span id="duration">3:20</span>
+          </div>
+        </div>
           <div class="controlBar">
-            <button id="btnPrevious"></button>
-            <button id="btnPlay"></button>
-            <button id="btnNext"></button>
-            <button id="btnVolumeUp"></button>
-            <meter min="0" max="100" value="90"></meter>
-            <button id="btnVolumeDown"></button>
+            <div class="cb_play">
+              <div class="inner">
+                <span id="btnPrevious"><i class="fa fa-backward fa-lg" aria-hidden="true"></i></span>
+                <span id="btnPlay"><i class="fa fa-play fa-lg" aria-hidden="true"></i></span>
+                <span id="btnNext"><i class="fa fa-forward fa-lg" aria-hidden="true"></i></span>
+              </div>
+            </div>
+            <div class="cb_volume">
+              <div class="inner">
+                <span id="btnVolume"><i class="fa fa-volume-up" aria-hidden="true"></i></span>
+                <meter id="volume" min="0" max="100" value="90"></meter>
+              </div>
+            </div>
+          </div>
+        <div class="lyrics">
+          <div class="inner">
+
           </div>
         </div>
       </div>
       <div class="playlist">
-        <ol>
-          <li><a href="#"></a></li>
-          <li><a href="#"></a></li>
-          <li><a href="#"></a></li>
-          <li><a href="#"></a></li>
-        </ol>
+        <div class="inner">
+          <ol>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+          </ol>
+        </div>
       </div>
-    </div>
   </body>
 </html>
