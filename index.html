@@ -2,62 +2,59 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>my music player</title>
+    <title>anotherMusicPlayer</title>
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/master.css">
-    <script
-			  src="https://code.jquery.com/jquery-3.1.0.min.js"
-			  integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="
-			  crossorigin="anonymous"></script>
-    <script type="master.js"></script>
+    <script src="js/jquery-3.1.0.min.js"></script>
+    <script src="js/master.js"></script>
   </head>
   <body>
       <div class="player">
+        <audio id="audio" src=""></audio>
+        <div class="playlist">
+          <div class="inner">
+            <h3>播放列表</h3>
+            <ul>
+            </ul>
+          </div>
+        </div>
         <div class="cover">
-          <div class="img"></div>
+          <div class="inner">
+            <img id="cover"  alt="封面图" />
+          </div>
         </div>
         <div class="info">
           <div class="inner">
-            <p id="name">wish u were here</p>
-            <p id="artist">pink floyd</p>
+            <p id="title">歌曲名</p>
+            <p id="artist">演唱者</p>
           </div>
         </div>
         <div class="progressBar">
           <div class="inner">
-            <span id="time">1:00</span>
-            <progress id="playPercent" max="100" value="80"></progress>
-            <span id="duration">3:20</span>
+            <span id="time">0:00</span>
+            <progress id="progress" max="100"></progress>
+            <span id="duration">0:00</span>
           </div>
         </div>
           <div class="controlBar">
             <div class="cb_play">
               <div class="inner">
-                <span id="btnPrevious"><i class="fa fa-backward fa-lg" aria-hidden="true"></i></span>
-                <span id="btnPlay"><i class="fa fa-play fa-lg" aria-hidden="true"></i></span>
-                <span id="btnNext"><i class="fa fa-forward fa-lg" aria-hidden="true"></i></span>
+                <span id="btnPrevious"><i class="fa fa-backward fa-lg btn" aria-hidden="true"></i></span>
+                <span id="btnPlay"><i class="fa fa-play fa-lg btn" aria-hidden="true"></i></span>
+                <span id="btnNext"><i class="fa fa-forward fa-lg btn" aria-hidden="true"></i></span>
               </div>
             </div>
             <div class="cb_volume">
               <div class="inner">
-                <span id="btnVolume"><i class="fa fa-volume-up" aria-hidden="true"></i></span>
+                <span id="btnVolume"><i class="fa fa-volume-up btn" aria-hidden="true"></i></span>
                 <meter id="volume" min="0" max="100" value="90"></meter>
               </div>
             </div>
           </div>
         <div class="lyrics">
           <div class="inner">
-
+            <p>歌词</p>
           </div>
-        </div>
-      </div>
-      <div class="playlist">
-        <div class="inner">
-          <ol>
-            <li><a href="#"></a></li>
-            <li><a href="#"></a></li>
-            <li><a href="#"></a></li>
-            <li><a href="#"></a></li>
-          </ol>
         </div>
       </div>
   </body>
