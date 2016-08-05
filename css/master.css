@@ -12,6 +12,7 @@ a {
   text-decoration: none;
   display:block;
   outline:none;
+  color:black;
 }
 
 .player {
@@ -116,7 +117,7 @@ a {
   text-align: center;
   height:50%;
   overflow: hidden;
-  line-height: 21px;
+  line-height: 24px;
 }
 
 .progressBar {
@@ -144,6 +145,7 @@ a {
   border: 1px solid #0064B4;
   background-color:#e6e6e6;
   color: #0064B4;
+  cursor: pointer;
 }
 
 #time{
@@ -184,15 +186,22 @@ a {
 #btnNext {
   margin: auto;
   display:inline-block;
+  cursor: pointer;
 }
 
-i:hover {
-  height:120%;
-  weight:120%;
+.btn:hover i {
+  -webkit-transform:scale(1.2);
+  -moz-transform:scale(1.2);
+  transform: scale(1.2);
+  color:#444444;
+  transition: 0.2s;
+  -moz-transition:0.2s;
+  -webkit-transition: 0.2s;
 }
 meter {
   height:4px;
   margin:auto;
+  cursor: pointer;
 }
 
 .lyrics {
