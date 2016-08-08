@@ -36,6 +36,7 @@ $(document).ready(function(){
     $('.playlist li a').eq(trackIndex).addClass('playing');
   }
 
+
   function calcTime(time) {
     var minute=parseInt((time % 3600) / 60, 10);
     var second=parseInt(time % 60, 10);
@@ -56,10 +57,16 @@ $(document).ready(function(){
   }
 
   function trackPlay() {
-    $('#btnPlay i').removeClass('fa-play').addClass('fa-pause');
-    $('#cover').removeClass('paused').addClass('active');
-    audio.play();
-    playing = setInterval(updateProgress, 200);
+      $('#btnPlay i').removeClass('fa-play').addClass('fa-pause');
+      $('#cover').removeClass('paused').addClass('active');
+      audio.play();
+      playing = setInterval(updateProgress, 200);
+      //播放结束时自动跳转至下一首歌
+      audio.addEventListener('ended',function(){
+        $('#btnNext').trigger('click');
+        trackPlay();
+      });
+      audio.addEventListener('canplay', audio.play());
   }
 
   function trackPause() {
@@ -128,13 +135,6 @@ $(document).ready(function(){
     return false;
   });
 
-  //播放结束时自动跳转至下一首歌
-  audio.addEventListener('ended',function(){
-    $('#btnNext').trigger('click');
-    trackPlay();
-  });
-
-
   $('#btnPlay').click(function() {
     if(audio.paused){
       trackPlay();
@@ -145,7 +145,7 @@ $(document).ready(function(){
 
   $('#btnNext').click(function() {
     ispaused = audio.paused;
-    $('#cover').removeClass('active paused');
+    $('#cover').removeClass('active');
     //当前播放歌曲为最后一首时
     if (trackIndex === tracks.length-1) {
       trackIndex = 0;
@@ -158,7 +158,7 @@ $(document).ready(function(){
 
   $('#btnPrevious').click(function() {
     ispaused = audio.paused;
-    $('#cover').removeClass('active paused');
+    $('#cover').removeClass('active');
     //当前播放歌曲为第一首时
     if (trackIndex === 0 ) {
       trackIndex = tracks.length-1
