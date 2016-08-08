@@ -23,7 +23,7 @@ a {
   margin-left: -150px;
   width: 300px;
   height: 480px;
-  background-color: #86C166;
+  background-color: rgb(250, 218, 79);
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   border-radius: 3px;
@@ -38,7 +38,7 @@ a {
   height: 300px;
   top:0;
   left:0;
-  background-color: #86C166;
+  background-color: rgba(250, 218, 79, 0.9);
   z-index: 100;
   overflow:auto;
 }
@@ -48,7 +48,7 @@ a {
 }
 .playlist li {
   list-style: none;
-  border-bottom: 1px solid;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
   margin:10px 0;
   height: 30px;
 }
@@ -110,7 +110,7 @@ a {
 
 .info .inner {
   padding: 5px 10px;
-  border-top: 1px solid;
+  border-top: 1px solid rgba(255, 255, 255, 0.4);
 }
 
 .info p {
@@ -131,21 +131,31 @@ a {
 }
 
 .progressBar .inner{
-  border-top: 1px solid;
-  border-bottom: 1px solid;
+  border-top: 1px solid rgba(255, 255, 255, 0.4);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
   display: flex;
   overflow: hidden;
   height:100%;
 }
 
-#progress {
+progress {
   width: 210px;
-  height: 4px;
+  height: 7px;
   margin: auto;
-  border: 1px solid #0064B4;
-  background-color:#e6e6e6;
-  color: #0064B4;
+  border: 1px solid rgba(100, 240, 150, 0.5);
   cursor: pointer;
+}
+
+progress::-webkit-progress-bar {
+    background-color: rgba(245, 245, 220, 0.6);
+}
+
+progress::-webkit-progress-value {
+    background-color: rgba(100, 240, 150, 0.8);
+}
+
+progress::-moz-progress-bar {
+    background: rgba(100, 240, 150, 0.8);
 }
 
 #time{
@@ -178,6 +188,7 @@ a {
   width: 100%;
   height: 100%;
   display: flex;
+  justify-content:center;
 }
 
 #btnVolume,
@@ -198,10 +209,20 @@ a {
   -moz-transition:0.2s;
   -webkit-transition: 0.2s;
 }
+
 meter {
-  height:4px;
+  height:5px;
+  width: 70px;
   margin:auto;
   cursor: pointer;
+}
+
+::-webkit-meter-bar {
+  background: rgba(245, 245, 220, 0.6);
+}
+
+::-moz-meter-bar {
+  background: rgba(100, 240, 150, 0.6);
 }
 
 .lyrics {
@@ -213,7 +234,7 @@ meter {
 }
 
 .lyrics .inner {
-  border-top:1px solid;
+  border-top:1px solid rgba(255, 255, 255, 0.4);
   text-align: center;
   line-height: 40px;
 }
