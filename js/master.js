@@ -22,12 +22,12 @@ $(document).ready(function(){
   var audio= document.getElementById('audio');
   var currentVolume = 0.9;  //当前音量,默认90%
   var trackIndex = 0;   //当前播放歌曲序号，默认从第一首开始播放
-  var isplaying = true;
+  var ispaused ;
 
 
   //加载歌曲信息
   function loadTrack(trackIndex) {
-    track = tracks[trackIndex];
+    var track = tracks[trackIndex];
     audio.src = track.source;
     $('#title').text(track.title);
     $('#artist').text(track.artist);
@@ -60,20 +60,23 @@ $(document).ready(function(){
       $('#btnPlay i').removeClass('fa-play').addClass('fa-pause');
       $('#cover').removeClass('paused').addClass('active');
       audio.play();
-      playing = setInterval(updateProgress, 200);
+      //playing = setInterval(updateProgress, 200);
       //播放结束时自动跳转至下一首歌
       audio.addEventListener('ended',function(){
         $('#btnNext').trigger('click');
         trackPlay();
       });
-      audio.addEventListener('canplay', audio.play());
+      audio.addEventListener('playing', function(){
+          audio.play();
+      });
+      audio.addEventListener('timeupdate',updateProgress);
   }
 
   function trackPause() {
     $('#btnPlay i').removeClass('fa-pause').addClass('fa-play');
     $('#cover').addClass('paused');
     audio.pause();
-    clearInterval(playing);
+    //clearInterval(playing);
   }
 
   //生成并插入播放列表
@@ -144,6 +147,7 @@ $(document).ready(function(){
   });
 
   $('#btnNext').click(function() {
+    //记录切换歌曲时的播放状态
     ispaused = audio.paused;
     $('#cover').removeClass('active');
     //当前播放歌曲为最后一首时
